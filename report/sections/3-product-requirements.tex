@@ -1,0 +1,100 @@
+\section{Engineering a solution}
+Now that a concrete way to discover a habit loop had been pinpointed, the next step was to create a set of requirements for our solution. We learned from our initial user study that our solution must be:
+
+\begin{enumerate}
+    \item Have low barrier of entry to utilize
+    \item Educate users on the habit loop
+    \item Make the habit loop discovery process easy
+    \item Make tracking habits low effort
+\end{enumerate}
+
+\subsection{Scope}
+Next we scoped down the problem to only include creating habits that best suit the Habit Loop methodology. The constraints are:
+
+\begin{itemize}
+    \item Must be applied to change and replace an old undesirable habit
+    \item Must be able to include a cue, a routine and a reward
+    \item Habit goals are user-defined
+\end{itemize}
+
+In a future expansion of this project, it may be worthwhile re-evaluating scope. That being said there was a general consensus that adding more features for the sake of adding features would be determinable, and potentially pull away from the core idea of the habit loop. Later in this document some potential expansions are discussed.
+
+\subsection{Product Requirements}
+After deciding on both high level objectives and scoping, SE463 principles were applied to develop a finite set of product requirements. These requirements are listed below:
+\subsubsection{Education}
+Users can read about the cue routine reward methodology, with examples and explanations for each step
+\subsubsection{Habit Management}
+The user can see their “finalized habits” and their “to be determined/in progress habits” 
+\begin{enumerate}
+    \item Finalized $\implies$ The user has discovered the cue, routine, and reward already
+    \item In Progress $\implies$ The user is still experimenting with the cue, routine, reward
+\end{enumerate}
+\subsubsection{Discovering new Habits}    
+The user can enter an interface flow to add a new habit
+    \begin{enumerate}
+        \item The user can add a routine
+        \item The user can track details to discover their cue 
+            \begin{enumerate}
+                \item The user is presented with six cue questions and a short text response
+                    \begin{enumerate}
+                        \item Location: Where are you? \textit{Ex: At home, in my bedroom}
+                        \item Time: What time of day is it? \textit{Ex: Around 2-3pm}
+                        \item Mood: What is your emotional state? \textit{Ex: Confused \& anxious}
+                        \item Thoughts: What are you thinking? \textit{Ex: Thinking about what deadlines I have coming up}
+                        \item People around you: Who is nearby? \textit{Ex: My co-workers}
+                        \item Immediately preceding action: What did you do right before? \textit{Ex: I ate a meal}
+                    \end{enumerate}
+                \item The user can add/save instances of the above cue question answers (independent from each other; each records a response to all of the 6 questions)
+                \item The user can view an aggregation of their cue questions in a visual way:
+                    \begin{enumerate}
+                        \item Location - Displayed as a list
+                        \item Time - Displayed as a calendar
+                        \item Mood - Displayed as a list
+                        \item Thoughts - Displayed as a list
+                        \item People around you - Displayed as a list
+                        \item Immediately preceding action - Displayed a list
+                    \end{enumerate}
+                \item The user can then select one of their previously added cues (or potentially a combination of multiple) as the final cue for their habit
+            \end{enumerate}
+        \item The user can experiment with rewards
+        \begin{enumerate}
+            \item The user can track/add a reward theory: composed of a “craving” and a “reward”
+            \begin{enumerate}
+                \item User is presented with two questions to add a reward theory and short text response boxes:
+                \begin{enumerate}
+                    \item Craving: What craving do you think you want? \textit{Ex: I want to socialize}
+                    \item What will you use to fulfill the craving? \textit{Ex: Talk to my co-workers}
+                \end{enumerate}
+                \item The user can save/add multiple craving theories at first; then fill in the others later. This is for the use case where a user might have a bunch of theories as to what they actually want but not sure what to replace it with yet.
+                \item If craving and the reward are both filled out, the user can indicate if their test was successful or failed.
+                \item Successful rewards are indicated/highlighted somehow; failed rewards are shown in a greyed out or lesser version
+                \item The user can select one of their entered rewards as the final success for their habit 
+            \end{enumerate}
+            \item The user can add additional notes for things which are not the above
+        \end{enumerate}
+        \item Once a user has added their cue and reward, the user can turn those into a new habit instance, such that:
+        \begin{enumerate}
+            \item The cue $\implies$ cue
+            \item The reward craving $\implies$ reward
+            \item The reward fulfillment action $\implies$ reward
+        \end{enumerate}
+        \item The user can see the plan statement when they view their habit from the main app screen
+        \begin{enumerate}
+            \item The user needs to write this plan with a large amount of intention.
+            \item Thus, force them to retype their plan as a sentence
+            \begin{enumerate}
+                \item Type out your cue, routine, reward to continue! “When \textit{cue}, I will \textit{routine}, so that I \textit{reward}"
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    It should be important to note that these requirements are NOT a design specification, which comes after feature requirements are finalized.
+    % \item Once a user has added their cue and reward, the user can turn those into a new habit instance, such that: 
+    % \begin{enumerate}
+    %     \item 
+    % \end{enumerate}
+    
+    % \item
+
+
+
+

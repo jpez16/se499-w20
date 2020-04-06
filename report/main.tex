@@ -1,0 +1,77 @@
+\documentclass[titlepage]{article}
+\usepackage[utf8]{inputenc}
+
+% Margins
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{graphicx}
+\geometry{letterpaper, portrait, margin=1in}
+
+% Images
+\usepackage{graphicx}
+\usepackage{rotating} % to create landscape image and table pages
+\usepackage{pdfpages} % to insert PDF printouts
+\graphicspath{ {./images/} }
+% Tables
+\usepackage{makecell}
+\renewcommand{\cellalign}{tl}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1}} % for left-justified, ragged-right table cells
+
+% For per-section reference labeling
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+% Document compilation
+\usepackage{import}
+\usepackage[titletoc,title]{appendix}
+\usepackage{glossaries}
+\usepackage{hyperref} % should be last included package
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={SE499 Report - Cued App}
+}
+
+\setcounter{tocdepth}{2} % Exclude subsubsections from TOC
+
+% Include glossary definitions
+\import{./}{glossary.tex}
+% Print glossary without default title
+\renewcommand{\glossarysection}[2][]{}
+
+\title{SE499 Report - Cued App}
+\author{\textbf{Justin Pezzack} \\
+    jjpezzac@uwaterloo.ca}
+\date{April 6th, 2020}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\import{sections/}{0-acknowledgements.tex}
+\newpage
+\import{sections/}{1-introduction.tex}
+\import{sections/}{2-research.tex}
+\import{sections/}{3-product-requirements.tex}
+\import{sections/}{4-technical-stack.tex}
+\import{sections/}{5-next-steps.tex}
+\newpage
+
+% \begin{appendices}
+%     \section{Glossary}
+%     \printglossaries
+%     \newpage
+    
+%     \import{models/}{models.tex}
+% \end{appendices}
+
+\end{document}
+
+
